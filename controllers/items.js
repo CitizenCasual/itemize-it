@@ -6,7 +6,13 @@ function newItem(req, res) {
   })
 }
 
-
+function create(req, res) {
+  const item = new Item(req.body)
+  item.save(function(err) {
+    if (err) return res.redirect('/items/new')
+    res.redirect('/items')
+  })
+}
 
 function index(req, res) {
   Item.find({}, function(err, items) {
@@ -20,7 +26,10 @@ function index(req, res) {
 
 
 
+
+
 export {
   newItem as new,
   index,
+  create,
 }
