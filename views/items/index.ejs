@@ -1,0 +1,17 @@
+<%- include ('../partials/html-head') %>
+<%- include ('../partials/nav') %>
+
+<body>
+  <h1><%= title %> </h1>
+  <div id="item-container">
+    <% items.forEach((item) => {
+      <img src="https://via.placeholder.com/150">
+      <p><%= item.title %></p>
+    }) %> 
+  </div>
+</body>
+
+
+
+
+<%- include ('../partials/footer') %> 
