@@ -2,16 +2,9 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema
 
-const itemNoteSchema = newSchema({
-  owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
-  content: String,
-  item: {Item},
-})
-
-const itemSchema = newSchema({
+const itemSchema = new Schema({
   title: String,
   owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
-  notes: [itemNoteSchema],
   condition: Number,
   date: Number,
   shareStatus: Boolean,

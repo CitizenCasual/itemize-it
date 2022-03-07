@@ -18,7 +18,7 @@ import('./config/passport.js')
 // require routes
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
-import { router as itemsRouter } from './routes/items'
+import { router as itemsRouter } from './routes/items.js'
 
 // create the express app
 const app = express()
