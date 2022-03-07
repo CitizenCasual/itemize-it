@@ -3,6 +3,7 @@
 
 <main>
   <h1><%= title %> </h1>
+  <% if (user) { %> 
   <form id="new-form" action="/items" method="POST">
     <label for="title-input">Name:</label>
     <input type="text" name="title" id="title-input">
@@ -23,6 +24,7 @@
     <input type="date" name="date" id="date-input">
     <button type="submit">Add Item</button>
   </form>
+  <% } %> 
 </main>
 
 

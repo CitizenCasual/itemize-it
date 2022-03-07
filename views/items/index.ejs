@@ -2,6 +2,7 @@
 <%- include ('../partials/nav') %>
 
 <body>
+  <% if (user) { %> 
   <h1><%= title %> </h1>
   <div id="item-container">
     <% items.forEach((item) => {
@@ -9,6 +10,8 @@
       <p><%= item.title %></p>
     }) %> 
   </div>
+  <a href="/items/new">Add an Item</a>
+  <% } %>
 </body>
 
 

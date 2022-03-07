@@ -7,26 +7,24 @@ function newItem(req, res) {
 }
 
 function create(req, res) {
-  const item = new Item(req.body)
-  item.save(function(err) {
-    if (err) return res.redirect('/items/new')
-    res.redirect('/items')
-  })
+  req.body.owner = req.user.profile._id
+  req.body.shareStatus = !!req.body.shareStatus
+  Item.create(req.body)
 }
 
 function index(req, res) {
-  Item.find({}, function(err, items) {
+  Item.find({})
+  .then(items => {
     res.render('items/index', {
-      err,
       items,
       title: 'All Items'
     })
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/items')
+  })
 }
-
-
-
-
 
 export {
   newItem as new,
