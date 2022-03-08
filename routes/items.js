@@ -7,6 +7,7 @@ router.get('/', itemsCtrl.index)
 router.get('/new', itemsCtrl.new)
 router.post('/', isLoggedIn, itemsCtrl.create)
 router.get('/:id', itemsCtrl.show)
+router.get('/:id/edit', isLoggedIn, itemsCtrl.edit)
 
 export {
   router

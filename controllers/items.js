@@ -48,9 +48,17 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Item.findById(req.params.id)
+  .then(item => {
+    res.render('items/edit')
+  })
+}
+
 export {
   newItem as new,
   index,
   create,
   show,
+  edit,
 }

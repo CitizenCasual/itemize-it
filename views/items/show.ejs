@@ -12,6 +12,11 @@
     <h1>Item Notes</h1>
     <p>Condition:<%= item.condition %> </p>
   </div>
-</div>
+  <% if (item.owner.equals(user?.profile._id)) { %>
+    <form action="/items/<%= item._id %>/edit " method="GET">
+      <button class="btn" type="submit">Update this Item</button>
+    </form>
+  <% } %> 
+
 
 <%- include('../partials/footer') %>
