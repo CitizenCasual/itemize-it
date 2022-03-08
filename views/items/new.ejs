@@ -4,7 +4,7 @@
 <main>
   <h1><%= title %> </h1>
   <% if (user) { %> 
-  <form id="new-form" action="/new" method="POST">
+  <form id="new-form" action="/items" method="POST">
     <label for="title-input">Name:</label>
     <input type="text" name="title" id="title-input">
     <label for="condition-input">Condition:</label>
@@ -22,9 +22,9 @@
     </select>
     <label for="date-input">Date Aqcuired:</label>
     <input type="date" name="date" id="date-input">
-    <button type="submit">Add Item</button>
     <label for="shareStatus-input">Willing to Share?</label>
     <input type="checkbox" name="shareStatus" id="shareStatus-input">
+    <button type="submit">Add Item</button>
   </form>
   <% } %> 
 </main>
