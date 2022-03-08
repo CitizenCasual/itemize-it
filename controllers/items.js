@@ -58,10 +58,15 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  
+}
+
 export {
   newItem as new,
   index,
   create,
   show,
   edit,
+  update,
 }
