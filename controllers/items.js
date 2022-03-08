@@ -52,6 +52,7 @@ function edit(req, res) {
   Item.findById(req.params.id)
   .then(item => {
     res.render('items/edit', {
+      item,
       title: 'Update Item'
     })
   })
