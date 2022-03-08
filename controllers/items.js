@@ -33,8 +33,24 @@ function create(req, res) {
     })
 }
 
+function show(req, res) {
+  Item.findById(req.params.id)
+  .populate('owner')
+  .then(item => {
+    res.render('items/show', {
+      item,
+      title: 'Item Information'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/items')
+  })
+}
+
 export {
   newItem as new,
   index,
   create,
+  show,
 }
