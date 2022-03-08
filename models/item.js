@@ -6,7 +6,9 @@ const itemSchema = new Schema({
   title: String,
   owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
   condition: Number,
-  date: Number,
+  date: {
+    type: Date,
+  },
   shareStatus: Boolean,
 }, {
   timestamps: true
