@@ -1,0 +1,20 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<div id="item-view-container">
+  <div id="info-container">
+    <h1><%= item.title %> </h1>
+    <p>Date Acquired:<%= item.date %> </p>
+    <p>Willing to Share?:<%= item.shareStatus %> </p>
+  </div>
+  <div id="notes-container">
+    <h1>Item Notes</h1>
+    <p>Condition:<%= item.condition %> </p>
+  </div>
+</div>
+
+
+
+
+
+<%- include('../partials/footer') %>
