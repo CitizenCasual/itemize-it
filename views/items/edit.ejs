@@ -1,0 +1,34 @@
+<%- include ('../partials/html-head') %> 
+<%- include ('../partials/nav') %> 
+
+<main>
+  <h1><%= title %> </h1>
+  <% if (user) { %> 
+  <form id="edit-form" action="/items/<%= item._id %>?_method=PUT " method="POST">
+    <label for="title-input">Name:</label>
+    <input type="text" name="title" id="title-input">
+    <label for="hours-input">Hours"</label>
+    <input type="number" name="hours" id="hours-input">
+    <label for="condition-input">Condition:</label>
+    <select name="condition" id="condition-input">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+    <label for="date-input">Date Aqcuired:</label>
+    <input type="date" name="date" id="date-input">
+    <label for="shareStatus-input">Willing to Share?</label>
+    <input type="checkbox" name="shareStatus" id="shareStatus-input">
+    <button type="submit">Add Item</button>
+  </form>
+  <% } %> 
+</main>
+
+<%- include ('../partials/footer') %> 
