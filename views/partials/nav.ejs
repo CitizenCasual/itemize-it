@@ -4,7 +4,11 @@
 </head>
 <body>
   <nav>
+    <h1 id="app-name">Itemize It!</h1>
     <% if (user) { %>
+      <p><a href="/items">Browse Items</a></p>
+      <p>My Items</p>
+      <p>My Account</p>
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
@@ -15,7 +19,4 @@
         </button>
       </a>
     <% } %>
-    <p><a href="/items">Browse Items</a></p>
-    <p>My Items</p>
-    <p>My Account</p>
   </nav>
