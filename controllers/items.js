@@ -77,6 +77,24 @@ function update(req, res) {
   })
 }
 
+function deleteItem(req, res) {
+  Item.findById(req.params.id)
+  .then(item => {
+    if (item.owner.equals(req.user.profile._id)) {
+      item.delete()
+      .then(() => {
+        res.redirect('/items')
+      })
+    } else {
+      throw new Error ('Not authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/items')
+  })
+}
+
 export {
   newItem as new,
   index,
@@ -84,4 +102,5 @@ export {
   show,
   edit,
   update,
+  deleteItem as delete,
 }
