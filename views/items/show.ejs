@@ -16,6 +16,9 @@
     <form action="/items/<%= item._id %>/edit " method="GET">
       <button class="btn" type="submit">Update this Item</button>
     </form>
+    <form action="/items/<%= items._id %>?_method=DELETE " method="POST">
+      <button class="btn" type="submit">Delete this Item</button>
+    </form>
   <% } %> 
 
 
