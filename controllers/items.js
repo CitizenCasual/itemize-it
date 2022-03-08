@@ -24,11 +24,11 @@ function create(req, res) {
   req.body.owner = req.user.profile._id
   Item.create(req.body)
     .then(item => {
-      res.redirect('items/index')
+      res.redirect('/items')
     })
     .catch(err => {
       console.log(err)
-      res.redirect('items/index')
+      res.redirect('/items')
     })
 }
 
