@@ -6,17 +6,13 @@
   <% items.forEach(item => { %> 
     <table>
         <tr>
-          <td>owner</td>
           <td>title</td>
-          <td>condition</td>
-          <td>date</td>
+          <td>owner</td>
           <td>shareStatus</td>
         </tr>
         <tr>
-          <td><%= item.owner %> </td>
           <td><%= item.title %> </td>
-          <td><%= item.condition %> </td>
-          <td><%= item.date %> </td>
+          <td><%= item.owner %> </td>
           <td><%= item.shareStatus %> </td>
         </tr>
     </table>
