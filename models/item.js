@@ -8,6 +8,8 @@ const itemSchema = new Schema({
   condition: Number,
   date: Number,
   shareStatus: Boolean,
+}, {
+  timestamps: true
 })
 
 const Item = mongoose.model('Item', itemSchema)

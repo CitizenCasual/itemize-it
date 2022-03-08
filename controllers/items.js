@@ -22,7 +22,6 @@ function index(req, res) {
 
 function create(req, res) {
   req.body.owner = req.user.profile._id
-  req.body.shareStatus = !!req.body.shareStatus
   Item.create(req.body)
     .then(item => {
       res.redirect('items/index')
