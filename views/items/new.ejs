@@ -4,7 +4,7 @@
 <main>
   <h1><%= title %> </h1>
   <% if (user) { %> 
-  <form id="new-form" action="/items/new" method="POST">
+  <form id="new-form" action="/new" method="POST">
     <label for="title-input">Name:</label>
     <input type="text" name="title" id="title-input">
     <label for="condition-input">Condition:</label>
@@ -28,19 +28,5 @@
   </form>
   <% } %> 
 </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <%- include ('../partials/footer') %> 

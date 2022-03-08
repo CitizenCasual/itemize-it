@@ -1,5 +1,11 @@
 import { Item } from "../models/item.js"
 
+function newItem(req, res) {
+  res.render('items/new', {
+    title: 'Create New Item'
+  })
+}
+
 function index(req, res) {
   Item.find({})
   .then(items => {
@@ -27,6 +33,7 @@ function create(req, res) {
 }
 
 export {
+  newItem as new,
   index,
   create,
 }
