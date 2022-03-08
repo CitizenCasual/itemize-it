@@ -5,7 +5,7 @@ const router = Router()
 
 router.get('/', itemsCtrl.index)
 router.get('/new', itemsCtrl.new)
-router.post('/new', isLoggedIn, itemsCtrl.create)
+router.post('/', isLoggedIn, itemsCtrl.create)
 
 export {
   router

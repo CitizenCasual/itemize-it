@@ -4,10 +4,22 @@
 <section>
   <h1>All Items</h1>
   <% items.forEach(item => { %> 
-    <div id="item-container">
-      <h3><%= item.title %> </h3>
-      <p>View Details</p>
-      </div>
+    <table>
+        <tr>
+          <td>owner</td>
+          <td>title</td>
+          <td>condition</td>
+          <td>date</td>
+          <td>shareStatus</td>
+        </tr>
+        <tr>
+          <td><%= item.owner %> </td>
+          <td><%= item.title %> </td>
+          <td><%= item.condition %> </td>
+          <td><%= item.date %> </td>
+          <td><%= item.shareStatus %> </td>
+        </tr>
+    </table>
   <% }) %> 
   <a href="/items/new">Create a New Item</a>
 </section>
