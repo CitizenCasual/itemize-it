@@ -59,7 +59,22 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  
+  Item.findById(req.params.id)
+  .then(item => {
+    if (item.owner.equals(req.user.profile._id)) {
+      req.body.shareStatus = !!req.body.shareStatus
+      item.updateOne(req.body, {new: true})
+      .then(() => {
+        res.redirect(`/items/${item._id}`)
+      })
+    } else {
+      throw new Error ('Not authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/items`)
+  })
 }
 
 export {
