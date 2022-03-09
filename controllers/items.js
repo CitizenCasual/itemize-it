@@ -56,12 +56,6 @@ function edit(req, res) {
       item,
       title: 'Update Item'
     })
-    .then(item => {
-      res.render('items/newNote', {
-        item,
-        title: 'Create Note'
-      })
-    })
   })
 }
 
@@ -102,32 +96,6 @@ function deleteItem(req, res) {
   })
 }
 
-// function newNote(req, res) {
-//   Item.findById(req.params.id)
-//   .then(item => {
-//     res.render('items/newNote', {
-//       item,
-//       title: 'Create Note'
-//     })
-//   })
-// }
-
-
-// function createNote(req, res) {
-//   Profile.findById(req.user.profile._id)
-//   .then(profile => {
-//     profile.notes.push(req.body)
-//     profile.save()
-//     .then(() => {
-//       res.redirect('/items/show')
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/items/show')
-//   })
-// }
-
 export {
   newItem as new,
   index,
@@ -136,6 +104,4 @@ export {
   edit,
   update,
   deleteItem as delete,
-  // newNote as newNote,
-  // createNote,
 }

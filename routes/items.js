@@ -10,8 +10,6 @@ router.get('/:id', itemsCtrl.show)
 router.get('/:id/edit', isLoggedIn, itemsCtrl.edit)
 router.put('/:id', isLoggedIn, itemsCtrl.update)
 router.delete('/:id', isLoggedIn, itemsCtrl.delete)
-router.get('/:id/newNote', itemsCtrl.edit)
-// router.post('/:id', isLoggedIn, itemsCtrl.createNote)
 
 
 export {
