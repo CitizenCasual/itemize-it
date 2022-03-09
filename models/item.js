@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema
 
 const itemNoteSchema = new Schema({
+  owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
   content: String,
 }, {
   timestamps: true
 })
 
 const Note = mongoose.model('Note', itemNoteSchema)
-
 
 const itemSchema = new Schema({
   title: String,
@@ -28,7 +28,6 @@ const itemSchema = new Schema({
 const Item = mongoose.model('Item', itemSchema)
 
 export {
-
   Note,
   Item,
 }

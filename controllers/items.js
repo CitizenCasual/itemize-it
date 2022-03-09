@@ -1,4 +1,5 @@
 import { Item, Note } from "../models/item.js"
+import { Profile } from "../models/profile.js"
 
 function newItem(req, res) {
   res.render('items/new', {
@@ -96,15 +97,7 @@ function deleteItem(req, res) {
 }
 
 function createNote(req, res) {
-  req.body.owner = req.user.profile._id
-  Note.create(req.body)
-  .then(note => {
-    res.redirect('/items/:id')
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/items')
-  })
+  Profile.findById(req.user.)
 }
 
 export {

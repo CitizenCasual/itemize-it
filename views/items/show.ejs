@@ -2,17 +2,32 @@
 <%- include('../partials/nav') %>
 
 <% if (item.owner.equals(user?.profile._id)) { %>
+  <h1><%= title %></h1> 
   <div id="item-view-container">
     <div id="info-container">
       <h1><%= item.title %> </h1>
       <p>Date Acquired:<%= item.date %> </p>
       <p>Hours:<%= item.hours %> </p>
       <p>Willing to Share?:<%= item.shareStatus %> </p>
+      <h1>Item Notes</h1>
+      <% if (profile.notes.length) { %>
+        <% profile.notes.forEach(note => { %> 
+          <table>
+            <tr>
+              <td>Owner</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><%= note.owner %> </td>
+              <td><%= note.content %> </td>
+            </tr>
+          </table>
+        <% }) %> 
+      <% } %>  
+      <p>Condition:<%= item.condition %> </p>
     </div>
     <form action="/items/<%= item._id %> " method="POST"> 
-      <div id="notes-container">
-        <h1>Item Notes</h1>
-        <p>Condition:<%= item.condition %> </p>
+      <div id="notes-input-container">
         <input type="text" name="note" id="note-input"> 
         <button class="btn" type="submit">Create Note</button>
       </div>
