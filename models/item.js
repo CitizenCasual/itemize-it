@@ -31,4 +31,5 @@ const Item = mongoose.model('Item', itemSchema)
 export {
 
   Item,
+  Note,
 }
