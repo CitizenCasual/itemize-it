@@ -7,19 +7,21 @@
     <p>Date Acquired:<%= item.date %> </p>
     <p>Hours:<%= item.hours %> </p>
     <p>Willing to Share?:<%= item.shareStatus %> </p>
+  </div>
+  <% notes.forEach(note => { %> 
     <div id="note-box">
       <p><%= note.content %> </p>
     </div>
-  </div>
-  <form action="/items/<%= item._id %>/notes " method="POST"> 
-    <div id="notes-container">
-      <h1>Item Notes</h1>
-      <p>Condition:<%= item.condition %> </p>
-      <input type="text" name="note" id="note-input"> 
-      <button class="btn" type="submit">Create Note</button>
-    </div>
-  </form>
+  <% }) %> 
   <% if (item.owner.equals(user?.profile._id)) { %>
+    <form action="/items/<%= item._id %>/notes " method="POST"> 
+      <div id="notes-container">
+        <h1>Item Notes</h1>
+        <p>Condition:<%= item.condition %> </p>
+        <input type="text" name="note" id="note-input"> 
+        <button class="btn" type="submit">Create Note</button>
+      </div>
+    </form>
     <form action="/items/<%= item._id %>/edit " method="GET">
       <button class="btn" type="submit">Update this Item</button>
     </form>
