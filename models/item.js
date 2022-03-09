@@ -9,7 +9,7 @@ const itemNoteSchema = new Schema({
   timestamps: true
 })
 
-const Note = mongoose.model('Item', itemNoteSchema)
+const Note = mongoose.model('Note', itemNoteSchema)
 
 
 const itemSchema = new Schema({
@@ -28,10 +28,8 @@ const itemSchema = new Schema({
 
 const Item = mongoose.model('Item', itemSchema)
 
-
-
 export {
 
-  Item,
   Note,
+  Item,
 }
