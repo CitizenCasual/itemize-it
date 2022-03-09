@@ -1,5 +1,5 @@
 import { Item, Note } from "../models/item.js"
-import { Profile } from "../models/profile.js"
+import { Profiles } from "../models/profiles.js"
 
 function newItem(req, res) {
   res.render('items/new', {

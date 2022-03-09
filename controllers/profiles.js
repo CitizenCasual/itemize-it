@@ -1,10 +1,10 @@
-import { Profile } from "../models/profile.js"
+import { Profiles } from "../models/profiles.js"
 
 function index(req, res) {
-  Profile.find({})
-  .then(profiles => {
+  Profiles.find({})
+  .then(profile => {
     res.render('profiles/index', {
-      profiles,
+      profile,
       title: 'Active Users'
     })
   })
