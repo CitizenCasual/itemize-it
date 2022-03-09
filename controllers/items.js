@@ -20,19 +20,19 @@ function index(req, res) {
   })
 }
 
-function notesIndex(req, res) {
-  Note.find({})
-  .then(notes => {
-    res.render('items/:id', {
-      notes,
-      title: 'Notes'
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/items')
-  })
-}
+// function notesIndex(req, res) {
+//   Note.find({})
+//   .then(notes => {
+//     res.render('items/show', {
+//       notes,
+//       title: 'Notes'
+//     })
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/items')
+//   })
+// }
 
 function create(req, res) {
   req.body.owner = req.user.profile._id
@@ -54,6 +54,13 @@ function show(req, res) {
     res.render('items/show', {
       item,
       title: 'Item Information'
+    })
+  })
+  Note.find({})
+  .then(notes => {
+    res.render('items/show', {
+      notes,
+      title: 'Notes'
     })
   })
   .catch(err => {
@@ -137,7 +144,7 @@ export {
   edit,
   update,
   deleteItem as delete,
-  notesIndex,
+  // notesIndex,
   createNote,
   // showNote,
 }

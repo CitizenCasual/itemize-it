@@ -1,14 +1,14 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<div id="item-view-container">
-  <div id="info-container">
-    <h1><%= item.title %> </h1>
-    <p>Date Acquired:<%= item.date %> </p>
-    <p>Hours:<%= item.hours %> </p>
-    <p>Willing to Share?:<%= item.shareStatus %> </p>
-  </div>
-  <% if (item.owner.equals(user?.profile._id)) { %>
+<% if (item.owner.equals(user?.profile._id)) { %>
+  <div id="item-view-container">
+    <div id="info-container">
+      <h1><%= item.title %> </h1>
+      <p>Date Acquired:<%= item.date %> </p>
+      <p>Hours:<%= item.hours %> </p>
+      <p>Willing to Share?:<%= item.shareStatus %> </p>
+    </div>
     <% notes.forEach(note => { %> 
       <div id="note-box">
         <h1><%= title %> </h1>
