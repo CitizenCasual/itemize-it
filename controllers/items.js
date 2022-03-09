@@ -23,7 +23,10 @@ function index(req, res) {
 function notesIndex(req, res) {
   Note.find({})
   .then(notes => {
-    res.redirect('/items/show')
+    res.render('items/:id', {
+      notes,
+      title: 'Notes'
+    })
   })
   .catch(err => {
     console.log(err)
@@ -118,7 +121,14 @@ function createNote(req, res) {
     console.log(err)
     res.redirect('/items')
   })
+}
 
+function showNote(req, res) {
+  Note.findById(req.params.id)
+  .populate('owner')
+  .then(note => {
+    res.redirect('items/:id')
+  })
 }
 
 export {
@@ -131,4 +141,5 @@ export {
   deleteItem as delete,
   notesIndex,
   createNote,
+  showNote,
 }
