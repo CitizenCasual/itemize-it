@@ -49,19 +49,12 @@ function create(req, res) {
 
 function show(req, res) {
   Item.findById(req.params.id)
+  Note.findById(req.params.id)
   .populate('owner')
   .then(item => {
     res.render('items/show', {
       item,
       title: 'Item Information'
-    })
-  })
-  Note.findById(req.params.id)
-  .populate('owner')
-  .then(note => {
-    res.render('items/show', {
-      note,
-      title: 'Item Note'
     })
   })
   .catch(err => {
