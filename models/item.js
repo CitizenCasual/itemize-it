@@ -5,12 +5,12 @@ const Schema = mongoose.Schema
 const itemNoteSchema = new Schema({
   owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
   content: String,
-  item: [itemSchema]
 }, {
   timestamps: true
 })
 
 const Note = mongoose.model('Item', itemNoteSchema)
+
 
 const itemSchema = new Schema({
   title: String,
@@ -21,12 +21,14 @@ const itemSchema = new Schema({
     type: Date,
   },
   shareStatus: Boolean,
-  notes: [itemNoteSchema]
+
 }, {
   timestamps: true
 })
 
 const Item = mongoose.model('Item', itemSchema)
+
+
 
 export {
 
