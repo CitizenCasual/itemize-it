@@ -97,8 +97,12 @@ function deleteItem(req, res) {
 }
 
 function newNote(req, res) {
-  res.render('/items/newNotes', {
-    title: 'Create New Note'
+  Item.findById(req.params.id)
+  .then(item => {
+    res.render('items/newNote', {
+      item,
+      title: 'Create New Note'
+    })
   })
 }
 
