@@ -20,6 +20,17 @@ function index(req, res) {
   })
 }
 
+function notesIndex(req, res) {
+  Note.find({})
+  .then(notes => {
+    res.redirect('/items/show')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/items')
+  })
+}
+
 function create(req, res) {
   req.body.owner = req.user.profile._id
   req.body.shareStatus = !!req.body.shareStatus
@@ -95,19 +106,7 @@ function deleteItem(req, res) {
   })
 }
 
-function notesIndex(req, res) {
-  Note.find({})
-  .then(notes => {
-    res.render('items/show', {
-      notes,
-      title: 'Notes'
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/items')
-  })
-}
+
 
 function createNote(req, res) {
   req.body.owner = req.user.profile._id
