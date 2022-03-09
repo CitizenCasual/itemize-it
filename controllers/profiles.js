@@ -1,7 +1,7 @@
-import { Profiles } from "../models/profiles.js"
+import { Profile } from "../models/profiles.js"
 
 function index(req, res) {
-  Profiles.find({})
+  Profile.find({})
   .then(profile => {
     res.render('profiles/index', {
       profile,

@@ -9,8 +9,8 @@ const profileSchema = new mongoose.Schema({
   timestamps: true
 })
 
-const Profiles = mongoose.model('Profile', profileSchema)
+const Profile = mongoose.model('Profile', profileSchema)
 
 export {
-  Profiles,
+  Profile,
 }

@@ -1,5 +1,5 @@
 import { Item, Note } from "../models/item.js"
-import { Profiles } from "../models/profiles.js"
+import { Profile } from "../models/profiles.js"
 
 function newItem(req, res) {
   res.render('items/new', {
@@ -96,6 +96,12 @@ function deleteItem(req, res) {
   })
 }
 
+function newNote(req, res) {
+  res.render('/items/newNotes', {
+    title: 'Create New Note'
+  })
+}
+
 function createNote(req, res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
@@ -119,5 +125,6 @@ export {
   edit,
   update,
   deleteItem as delete,
+  newNote as newNote,
   createNote,
 }
