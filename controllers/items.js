@@ -102,20 +102,20 @@ function newNote(req, res) {
   })
 }
 
-function createNote(req, res) {
-  Profile.findById(req.user.profile._id)
-  .then(profile => {
-    profile.notes.push(req.body)
-    profile.save()
-    .then(() => {
-      res.redirect('/items/show')
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/items/show')
-  })
-}
+// function createNote(req, res) {
+//   Profile.findById(req.user.profile._id)
+//   .then(profile => {
+//     profile.notes.push(req.body)
+//     profile.save()
+//     .then(() => {
+//       res.redirect('/items/show')
+//     })
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/items/show')
+//   })
+// }
 
 export {
   newItem as new,
@@ -126,5 +126,5 @@ export {
   update,
   deleteItem as delete,
   newNote as newNote,
-  createNote,
+  // createNote,
 }

@@ -2,8 +2,8 @@
 <%- include ('../partials/nav') %> 
 
 <main>
-  <h1><%= title %> </h1>
   <% if (user) { %> 
+  <h1><%= title %> </h1>
     <form id="new-note-form" action="/items" method="POST">
       <label for="note-input">Enter Note Here:</label>
       <input type="text" name="note" id="note-input">
