@@ -1,21 +1,19 @@
 import { Profile } from "../models/profile.js"
 
-function profileView(req, res) {
+function index(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
-      res.render('profile/profile', {
-        profile,
-        title: 'Your Profile',
-      })
+    res.render('profile/index', {
+      profile,
+      title: 'Account Info'
     })
-    .catch((err) => {
-      console.log(err)
-      res.redirect('/')
-    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/items')
+  })
 }
 
-
-
 export {
-  profileView,
+  index,
 }
