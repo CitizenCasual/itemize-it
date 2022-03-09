@@ -57,7 +57,7 @@ function edit(req, res) {
       title: 'Update Item'
     })
     .then(item => {
-      res.render('item/newNote', {
+      res.render('items/newNote', {
         item,
         title: 'Create Note'
       })
