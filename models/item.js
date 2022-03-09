@@ -21,7 +21,7 @@ const itemSchema = new Schema({
     type: Date,
   },
   shareStatus: Boolean,
-
+  note: [itemNoteSchema]
 }, {
   timestamps: true
 })

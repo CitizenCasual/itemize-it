@@ -7,9 +7,12 @@
     <p>Date Acquired:<%= item.date %> </p>
     <p>Hours:<%= item.hours %> </p>
     <p>Willing to Share?:<%= item.shareStatus %> </p>
+    <div id="note-box">
+      <p><%= note.content %> </p>
+    </div>
   </div>
   <% if (item.owner.equals(user?.profile._id)) { %>
-    <form action="/items/<%= item._id %>/notes?_method=POST " method="POST"> 
+    <form action="/items/<%= item._id %>/notes " method="POST"> 
       <div id="notes-container">
         <h1>Item Notes</h1>
         <p>Condition:<%= item.condition %> </p>

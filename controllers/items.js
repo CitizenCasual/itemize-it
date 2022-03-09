@@ -96,14 +96,11 @@ function deleteItem(req, res) {
 }
 
 function createNote(req, res) {
-  req.body.owner = req.user.profile._id
-  Note.create(req.body)
-  .then(note => {
-    res.redirect('/items')
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/items')
+  Item.findById(req.params.id, function(err, item) {
+    item.note.push(req.body)
+    item.save(function(err) {
+      res.redirect('/items')
+    })
   })
 }
 
