@@ -8,11 +8,13 @@
     <p>Hours:<%= item.hours %> </p>
     <p>Willing to Share?:<%= item.shareStatus %> </p>
   </div>
-  <div id="notes-container">
-    <h1>Item Notes</h1>
-    <p>Condition:<%= item.condition %> </p>
-  </div>
   <% if (item.owner.equals(user?.profile._id)) { %>
+    <form action="/items/<%= item._id %>/notes "> 
+      <div id="notes-container">
+        <h1>Item Notes</h1>
+        <p>Condition:<%= item.condition %> </p>
+      </div>
+    </form>
     <form action="/items/<%= item._id %>/edit " method="GET">
       <button class="btn" type="submit">Update this Item</button>
     </form>
