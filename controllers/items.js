@@ -20,20 +20,6 @@ function index(req, res) {
   })
 }
 
-// function notesIndex(req, res) {
-//   Note.find({})
-//   .then(notes => {
-//     res.render('items/show', {
-//       notes,
-//       title: 'Notes'
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/items')
-//   })
-// }
-
 function create(req, res) {
   req.body.owner = req.user.profile._id
   req.body.shareStatus = !!req.body.shareStatus
@@ -49,7 +35,6 @@ function create(req, res) {
 
 function show(req, res) {
   Item.findById(req.params.id)
-  // Note.findById(req.params.id)
   .populate('owner')
   .then(item => {
     res.render('items/show', {
@@ -122,14 +107,6 @@ function createNote(req, res) {
   })
 }
 
-// function showNote(req, res) {
-//   Note.findById(req.params.id)
-//   .populate('owner')
-//   .then(note => {
-//     res.redirect('items/:id')
-//   })
-// }
-
 export {
   newItem as new,
   index,
@@ -138,7 +115,5 @@ export {
   edit,
   update,
   deleteItem as delete,
-  // notesIndex,
   createNote,
-  // showNote,
 }
