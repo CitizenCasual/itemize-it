@@ -109,8 +109,6 @@ function deleteItem(req, res) {
   })
 }
 
-
-
 function createNote(req, res) {
   req.body.owner = req.user.profile._id
   Note.create(req.body)
@@ -123,13 +121,13 @@ function createNote(req, res) {
   })
 }
 
-function showNote(req, res) {
-  Note.findById(req.params.id)
-  .populate('owner')
-  .then(note => {
-    res.redirect('items/:id')
-  })
-}
+// function showNote(req, res) {
+//   Note.findById(req.params.id)
+//   .populate('owner')
+//   .then(note => {
+//     res.redirect('items/:id')
+//   })
+// }
 
 export {
   newItem as new,
@@ -141,5 +139,5 @@ export {
   deleteItem as delete,
   notesIndex,
   createNote,
-  showNote,
+  // showNote,
 }
