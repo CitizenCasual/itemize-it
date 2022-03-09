@@ -8,11 +8,10 @@
     <% if (user) { %>
       <p><a href="/items">Browse Items</a></p>
       <p>My Items</p>
-      <p>My Account</p>
+      <a href="profile/<%= profile._id %>">Account</a>
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
-      <a href="profile/<%= profile._id %>">Account</a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
