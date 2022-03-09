@@ -14,7 +14,7 @@
     </div>
   <% }) %> 
   <% if (item.owner.equals(user?.profile._id)) { %>
-    <form action="/items/<%= item._id %>/notes " method="POST"> 
+    <form action="/items/<%= item._id %> " method="POST"> 
       <div id="notes-container">
         <h1>Item Notes</h1>
         <p>Condition:<%= item.condition %> </p>
