@@ -97,7 +97,18 @@ function deleteItem(req, res) {
 }
 
 function createNote(req, res) {
-  Profile.findById(req.user.)
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.notes.push(req.body)
+    profile.save()
+    .then(() => {
+      res.redirect('/items/show')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/items/show')
+  })
 }
 
 export {
