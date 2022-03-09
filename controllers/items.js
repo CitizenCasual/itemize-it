@@ -99,7 +99,7 @@ function createNote(req, res) {
   Item.findById(req.params.id, function(err, item) {
     item.note.push(req.body)
     item.save(function(err) {
-      res.redirect('/:id')
+      res.redirect('/items/:id')
     })
   })
 }
