@@ -49,7 +49,7 @@ function create(req, res) {
 
 function show(req, res) {
   Item.findById(req.params.id)
-  Note.findById(req.params.id)
+  // Note.findById(req.params.id)
   .populate('owner')
   .then(item => {
     res.render('items/show', {
