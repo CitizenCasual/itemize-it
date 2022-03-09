@@ -11,7 +11,7 @@
       <p>Willing to Share?:<%= item.shareStatus %> </p>
       <p>Condition:<%= item.condition %> </p>
     </div>
-    <form action="/items/<%= item._id %>/newNote " method="POST"> 
+    <form action="/items/<%= item._id %>/newNotes " method="GET"> 
       <div id="notes-input-container"> 
         <button class="btn" type="submit">Create Note</button>
       </div>
