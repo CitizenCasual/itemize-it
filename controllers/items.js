@@ -56,6 +56,12 @@ function edit(req, res) {
       item,
       title: 'Update Item'
     })
+    .then(item => {
+      res.render('item/newNote', {
+        item,
+        title: 'Create Note'
+      })
+    })
   })
 }
 
@@ -96,11 +102,16 @@ function deleteItem(req, res) {
   })
 }
 
-function newNote(req, res) {
-  res.render('items/newNote', {
-    title: 'Create New Note'
-  })
-}
+// function newNote(req, res) {
+//   Item.findById(req.params.id)
+//   .then(item => {
+//     res.render('items/newNote', {
+//       item,
+//       title: 'Create Note'
+//     })
+//   })
+// }
+
 
 // function createNote(req, res) {
 //   Profile.findById(req.user.profile._id)
@@ -125,6 +136,6 @@ export {
   edit,
   update,
   deleteItem as delete,
-  newNote as newNote,
+  // newNote as newNote,
   // createNote,
 }
