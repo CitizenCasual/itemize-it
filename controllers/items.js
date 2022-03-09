@@ -56,11 +56,12 @@ function show(req, res) {
       title: 'Item Information'
     })
   })
-  Note.find({})
-  .then(notes => {
+  Note.findById(req.params.id)
+  .populate('owner')
+  .then(note => {
     res.render('items/show', {
-      notes,
-      title: 'Notes'
+      note,
+      title: 'Item Note'
     })
   })
   .catch(err => {

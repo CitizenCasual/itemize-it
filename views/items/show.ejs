@@ -9,13 +9,16 @@
       <p>Hours:<%= item.hours %> </p>
       <p>Willing to Share?:<%= item.shareStatus %> </p>
     </div>
-    <% notes.forEach(note => { %> 
-      <div id="note-box">
-        <h1><%= title %> </h1>
-        <p><%= note.owner %> </p>
-        <p><%= note.content %> </p>
-      </div>
-    <% }) %> 
+    <% if (note.owner.equals(user?.profile._id)) { %> 
+      <% notes.forEach(note => { %> 
+        <div id="note-box">
+          <h1><%= title %> </h1>
+          <p><%= note.owner %> </p>
+          <p><%= note.content %> </p>
+        </div>
+      <% }) %>
+    <% } %> 
+    
     <form action="/items/<%= item._id %> " method="POST"> 
       <div id="notes-container">
         <h1>Item Notes</h1>
