@@ -95,6 +95,10 @@ function deleteItem(req, res) {
   })
 }
 
+function createNote(req, res) {
+  
+}
+
 export {
   newItem as new,
   index,
@@ -103,4 +107,5 @@ export {
   edit,
   update,
   deleteItem as delete,
+  createNote,
 }
