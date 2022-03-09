@@ -3,7 +3,7 @@ import * as profileCtrl from '../controllers/profile.js'
 import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
-router.get('/:id', isLoggedIn, profileCtrl.profileView)
+router.get('/profile', isLoggedIn, profileCtrl.index)
 
 export {
   router
