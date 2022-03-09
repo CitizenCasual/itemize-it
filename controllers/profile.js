@@ -2,17 +2,21 @@ import { Profile } from "../models/profile.js"
 
 function profileView(req, res) {
   Profile.findById(req.params.id)
-  .then(profile => {
-    if (user) {
-      res.render('profile/view'), {
+  .then((profile) => {
+    Profile.findById(req.user.profile._id)
+    .then(self => {
+      const isSelf = self._id.equals(profile._id)
+      res.render('profile/show', {
+        title: `${profile.name}'s Account`,
         profile,
-        title: 'Account Information'
-      }
-    }
+        self,
+        isSelf,
+      })
+    })
   })
-  .catch(err => {
+  .catch((err) => {
     console.log(err)
-    res.redirect(`/items`)
+    res.redirect('/')
   })
 }
 
