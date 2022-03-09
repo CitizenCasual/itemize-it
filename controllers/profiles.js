@@ -2,10 +2,10 @@ import { Profile } from "../models/profile.js"
 
 function index(req, res) {
   Profile.find({})
-  .then(profile => {
-    res.render('profile/index', {
-      profile,
-      title: 'Account Info'
+  .then(profiles => {
+    res.render('profiles/index', {
+      profiles,
+      title: 'Active Users'
     })
   })
   .catch(err => {
