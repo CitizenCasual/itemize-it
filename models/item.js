@@ -2,6 +2,12 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema
 
+const itemNoteSchema = new Schema({
+
+})
+
+const Note = mongoose.model('Item', itemNoteSchema)
+
 const itemSchema = new Schema({
   title: String,
   owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
@@ -18,5 +24,6 @@ const itemSchema = new Schema({
 const Item = mongoose.model('Item', itemSchema)
 
 export {
+
   Item,
 }
