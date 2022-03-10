@@ -18,9 +18,9 @@
           <p class="subtitle is-6">Willing to Share?<%= item.shareStatus %> </p>
         </div>
       </div>
-      <a href="/items/<%= item._id %>/edit ">Edit Item</a>
+      <a class="button is-light" href="/items/<%= item._id %>/edit ">Edit Item</a>
       <form action="/items/<%= item._id %>?_method=DELETE " method="POST">
-        <button type="submit">Delete this Item</button>
+        <button class="button is-light" type="submit">Delete this Item</button>
       </form>
       <div class="content">
         <br>
@@ -42,9 +42,6 @@
               </div>
             </div>
             <footer class="card-footer">
-              <form action="/items/<%= item._id %>/notes/<%= note._id %> ?_method=DELETE ">
-                <button type="submit">Delete this Note</button>
-              </form>
             </footer>
           </div>
         <% }) %> 

@@ -4,24 +4,26 @@
 <section id="items-section">
   <h1>All Items</h1>
   <% items.forEach(item => { %> 
-
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-48x48">
-              <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-            </figure>
+    <div class="columns">
+      <div class="column is-three-quarters">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4"><%= item.title %> </p>
+              <p class="subtitle is-6">Owners Name:<%= item.owner %></p>
+              <p class="subtitle is-6">Willing to Share?:<%= item.shareStatus %> </p>
+            </div>
           </div>
-          <div class="media-content">
-            <p class="title is-4"><%= item.title %> </p>
-            <p class="subtitle is-6">Owners Name:<%= item.owner %></p>
-            <p class="subtitle is-6">Willing to Share?:<%= item.shareStatus %> </p>
+          <div class="content">
+            <a href="/items/<%= item._id %> ">View Information</a>
           </div>
         </div>
-    
-        <div class="content">
-          <a href="/items/<%= item._id %> ">View Information</a>
-        </div>
+      </div>
       </div>
     </div>
   <% }) %> 
