@@ -1,3 +1,5 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
 html {
   box-sizing: border-box;
 }
@@ -40,7 +42,7 @@ nav li {
   padding-left: 1rem;
 }
 
-main {
+#main {
   display: flex;
   align-items: center;
   justify-content: center;
