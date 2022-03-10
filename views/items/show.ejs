@@ -42,7 +42,9 @@
               </div>
             </div>
             <footer class="card-footer">
-              <a href="#" class="card-footer-item">Delete</a>
+              <form action="/items/<%= item._id %>/notes?_method=DELETE ">
+                <button type="submit">Delete this Note</button>
+              </form>
             </footer>
           </div>
         <% }) %> 
