@@ -1,7 +1,7 @@
 <%- include ('../partials/html-head') %>
 <%- include ('../partials/nav') %>
 
-<section>
+<section id="items-section">
   <h1>All Items</h1>
   <% items.forEach(item => { %> 
 
@@ -15,31 +15,15 @@
           <div class="media-content">
             <p class="title is-4"><%= item.title %> </p>
             <p class="subtitle is-6"><%= item.owner %></p>
+            <p class="subtitle is-6"><%= item.shareStatus %> </p>
           </div>
         </div>
     
         <div class="content">
           <a href="/items/<%= item._id %> ">View Information</a>
-           <a>@bulmaio</a>.
-          <a href="#">#css</a> <a href="#">#responsive</a>
-          <br>
-          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
         </div>
       </div>
     </div>
-    <!-- <table>
-        <tr>
-          <td>title</td>
-          <td>owner</td>
-          <td>shareStatus</td>
-        </tr>
-        <tr>
-          <td><%= item.title %> </td>
-          <td><%= item.owner %> </td>
-          <td><%= item.shareStatus %> </td>
-        </tr>
-        <a href="/items/<%= item._id %> ">View Information</a>
-    </table> -->
   <% }) %> 
 
 </section>
