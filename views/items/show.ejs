@@ -46,14 +46,13 @@
       </div>
     </div>
   </div>
-
-  <form action="items/<%= item._id %>/notes " method="POST" >
+  <form action="/items/<%= item._id %>/notes " method="POST" >
     <div class="field">
       <label class="label">Add Note</label>
       <div class="control">
-        <textarea name='content' type='text' class="textarea" placeholder="Add Note Here"></textarea>
+        <input name='content' type='text' class="textarea" placeholder="Add Note Here"></input>
+        <button class="btn" type="submit">Create Note</button>
       </div>
-      <button class="btn" type="submit">Create Note</button>
     </div>
   </form>
   <% } %> 
