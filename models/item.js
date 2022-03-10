@@ -20,7 +20,7 @@ const itemSchema = new Schema({
     type: Date,
   },
   shareStatus: Boolean,
-  note: [itemNoteSchema]
+  notes: [itemNoteSchema]
 }, {
   timestamps: true
 })

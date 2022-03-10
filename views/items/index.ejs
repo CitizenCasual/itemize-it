@@ -3,7 +3,6 @@
 
 <section>
   <h1>All Items</h1>
-  <a href="/index">Account Info</a>
   <% items.forEach(item => { %> 
     <table>
         <tr>
@@ -19,8 +18,7 @@
         <a href="/items/<%= item._id %> ">View Information</a>
     </table>
   <% }) %> 
-  <a href="/items/new">Create a New Item</a>
-  <a href="/profiles">Other Collectors Info</a>
+
 </section>
 
 <%- include ('../partials/footer') %> 

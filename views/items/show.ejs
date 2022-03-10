@@ -10,11 +10,17 @@
       <p>Hours:<%= item.hours %> </p>
       <p>Willing to Share?:<%= item.shareStatus %> </p>
       <p>Condition:<%= item.condition %> </p>
+      <h1>Notes:</h1>
+      <% item.notes.forEach(function(note) { %>
+        <tr>
+          <td><%= note.createdAt.toLocaleDateString() %></td>
+          <td><%= note.content %></td>
+        </tr>
+      <% }) %> 
     </div>
-    <form action="/items/<%= item._id %> /newNote " method="GET"> 
-      <div id="notes-input-container"> 
-        <button class="btn" type="submit">Create Note</button>
-      </div>
+    <form action="/items/<%= item._id %>/notes " method="POST">
+      <input type="text">
+      <button class="btn" type="submit">Add a Note</button>
     </form>
     <form action="/items/<%= item._id %>/edit " method="GET">
       <button class="btn" type="submit">Update this Item</button>

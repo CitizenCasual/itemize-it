@@ -96,6 +96,15 @@ function deleteItem(req, res) {
   })
 }
 
+function createNote(req, res) {
+  Item.findById(req.params.id, function(err, item) {
+    item.notes.push(req.body)
+    item.save(function(err) {
+      res.redirect(`/items/${item._id}`)
+    })
+  })
+}
+
 export {
   newItem as new,
   index,
@@ -104,4 +113,5 @@ export {
   edit,
   update,
   deleteItem as delete,
+  createNote,
 }
