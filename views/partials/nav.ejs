@@ -3,14 +3,19 @@
   <% } %>
 </head>
 <body>
-  <nav>
-    <h1 id="app-name">Itemize It!</h1>
-    <% if (user) { %>
-      <p><a href="/items">Browse Items</a></p>
-      <p>My Items</p>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
+  <nav id="nav-container">
+      <% if (user) { %>
+      <div>
+        <ul>
+          <li><a>Itemize It!</a></li>
+          <li><a href="/items">Browse Items</a></li>
+          <li>
+            <a href="/auth/logout">
+              <button type="submit">Logout</button>
+            </a>
+          </li>
+        </ul>
+      </div>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">

@@ -25,10 +25,19 @@ body {
 }
 
 nav {
-  background-color: white;
-  font-size: 1.6rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #cfd8dc
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  padding-left: 1rem;
 }
 
 main {
