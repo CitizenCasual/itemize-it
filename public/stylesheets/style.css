@@ -28,19 +28,12 @@ body {
 
 nav {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 1rem 2rem;
   background: #cfd8dc
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
-}
-
-nav li {
-  padding-left: 1rem;
-}
 
 #main {
   display: flex;
