@@ -7,6 +7,11 @@ Itemize It! is a full CRUD application that helps users maintain their items. It
 
 [Trello Board](https://trello.com/b/HbxyDQjJ/calebs-trello)
 
+**Deployed Version can be found below**: <br>
+[Itemize It!](https://itemize-it.herokuapp.com/)
+
+
+
 
 <br></br>
 ## Screenshots
