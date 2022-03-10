@@ -1,42 +1,31 @@
-<% if (!user) { %>
-  <link rel="stylesheet" href="/stylesheets/siwg.css">
-<% } %>
 </head>
 <body>
   <% if (user) { %>
     <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <h1>Itemize It!</h1>
-        <nav id="nav-container">
-      </div>
+      <h1>Itemize It!</h1>
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a href="/items" class="button is-light">
+          <a href='/items' class="navbar-item">
             Browse Items
           </a>
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-light">
-                  My Account
-                </a>
-                <a href="/auth/logout" class="button is-light">
-                  Log Out
-                </a>
-              </div>
-            </div>
-          </div>
+          <a class="navbar-item">
+            Account
+          </a>
+          <a href="auth/logout" class="navbar-item">
+            Log Out
+          </a>
         </div>
-      </nav>
-    <% } else { %>
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <h1>Itemize It!</h1>
-          <nav id="nav-container">
+      </div>
+    </nav>
+  <% } else { %>  
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <h1>Itemize It!</h1>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a href="auth/google" class="button is-light">Sign In</a>
         </div>
-        <a href="/auth/google" class="button is-light">
-          <button type="submit" >Sign In with Google</button>
-        </a>
+      </div>
     </nav>
-      <% } %>
-    </nav>
+  <% } %> 
+
+
