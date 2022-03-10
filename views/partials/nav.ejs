@@ -3,15 +3,15 @@
 <% } %>
 </head>
 <body>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
   <% if (user) { %>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
         <h1>Itemize It!</h1>
         <nav id="nav-container">
       </div>
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a href="/items" class="navbar-item">
+          <a href="/items" class="button is-light">
             Browse Items
           </a>
           <div class="navbar-end">
@@ -29,12 +29,14 @@
         </div>
       </nav>
     <% } else { %>
-      <div class="navbar-brand">
-        <h1>Itemize It!</h1>
-        <nav id="nav-container">
-      </div>
-      <a href="/auth/google" class="button is-light">
-        <button type="submit" >Sign In with Google</button>
-      </a>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <h1>Itemize It!</h1>
+          <nav id="nav-container">
+        </div>
+        <a href="/auth/google" class="button is-light">
+          <button type="submit" >Sign In with Google</button>
+        </a>
+    </nav>
       <% } %>
     </nav>

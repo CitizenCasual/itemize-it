@@ -18,7 +18,6 @@
           <p class="subtitle is-6"><%= item.shareStatus %> </p>
         </div>
       </div>
-  
       <div class="content">
         <br>
         <% item.notes.forEach(function(note) { %> 
@@ -28,6 +27,16 @@
       </div>
     </div>
   </div>
+
+  <form action="items/<%= item._id %>/notes " method="POST" >
+    <div class="field">
+      <label class="label">Add Note</label>
+      <div class="control">
+        <textarea name='content' type='text' class="textarea" placeholder="Add Note Here"></textarea>
+      </div>
+      <button class="btn" type="submit">Create Note</button>
+    </div>
+  </form>
   <!-- <h1><%= title %></h1> 
   <div id="item-view-container">
     <div id="info-container">
