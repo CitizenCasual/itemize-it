@@ -2,7 +2,29 @@
 <%- include('../partials/nav') %>
 
 <% if (item.owner.equals(user?.profile._id)) { %>
-  <h1><%= title %></h1> 
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+  
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+        <a href="#">#css</a> <a href="#">#responsive</a>
+        <br>
+        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+      </div>
+    </div>
+  </div>
+  <!-- <h1><%= title %></h1> 
   <div id="item-view-container">
     <div id="info-container">
       <h1><%= item.title %> </h1>
@@ -27,7 +49,7 @@
     </form>
     <form action="/items/<%= item._id %>?_method=DELETE " method="POST">
       <button class="btn" type="submit">Delete this Item</button>
-    </form>
+    </form> -->
   <% } %> 
 
 
