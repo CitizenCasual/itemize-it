@@ -19,21 +19,24 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: #BBD5ED;
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   margin: 0;
 }
 
-nav {
+/* nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background: #cfd8dc
-}
+  background: #8BA6A9;
+} */
 
+.navbar {
+  background-color: #BBD5ED;
+}
 
 #main {
   display: flex;
@@ -43,7 +46,7 @@ nav {
 }
 
 h1 {
-  font-size: 3.6rem;
+  font-size: 6rem;
 }
 
 table {
