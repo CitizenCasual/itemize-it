@@ -12,13 +12,16 @@
         <div class="media-content">
           <p class="title is-4"><%= item.title %> </p>
           <p class="subtitle is-6"><%= item.owner %> </p>
-          <p class="subtitle is-6"><%= item.hours %> </p>
-          <p class="subtitle is-6"><%= item.condition %> </p>
-          <p class="subtitle is-6"><%= item.date %> </p>
-          <p class="subtitle is-6"><%= item.shareStatus %> </p>
+          <p class="subtitle is-6">Item Hours:<%= item.hours %> </p>
+          <p class="subtitle is-6">Item Condition:<%= item.condition %> </p>
+          <p class="subtitle is-6">Date Aqcuired:<%= item.date %> </p>
+          <p class="subtitle is-6">Willing to Share?<%= item.shareStatus %> </p>
         </div>
       </div>
       <a href="/items/<%= item._id %>/edit ">Edit Item</a>
+      <form action="/items/<%= item._id %>?_method=DELETE " method="POST">
+        <button type="submit">Delete this Item</button>
+      </form>
       <div class="content">
         <br>
         <% item.notes.forEach(function(note) { %> 
