@@ -2,6 +2,7 @@
 <%- include ('../partials/nav') %>
 
 <% profiles.forEach(profile => { %>
+  <a href="/profiles/<%= profile._id %> ">View Profile</a>
   <% if (profile.avatar) { %> 
     <img src="<%= profile.avatar %> ">  
   <% } %> 
