@@ -5,17 +5,16 @@
 <body>
   <nav id="nav-container">
       <% if (user) { %>
-      <div>
-        <ul>
-          <li><a>Itemize It!</a></li>
-          <li><a href="/items">Browse Items</a></li>
-          <li>
-            <a href="/auth/logout">
-              <button type="submit">Logout</button>
-            </a>
-          </li>
-        </ul>
-      </div>
+        <div class="columns">
+          <div class="column">
+            Itemize It!
+          </div>
+          <div class="column">
+            <a href="/items">Browse Items</a>
+          </div>
+          <div class="column">
+            <a href="/auth/logout">Log Out</a>
+          </div>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
