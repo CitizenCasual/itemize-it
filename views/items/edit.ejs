@@ -6,9 +6,9 @@
   <% if (user) { %> 
   <form id="edit-form" action="/items/<%= item._id %>?_method=PUT " method="POST">
     <label for="title-input">Name:</label>
-    <input type="text" name="title" id="title-input">
+    <input type="text" name="title" id="title-input" value="<%= item.title %> ">
     <label for="hours-input">Hours"</label>
-    <input type="number" name="hours" id="hours-input">
+    <input type="text" name="hours" id="hours-input" value="<%= item.hours %> ">
     <label for="condition-input">Condition:</label>
     <select name="condition" id="condition-input">
       <option value="1">1</option>

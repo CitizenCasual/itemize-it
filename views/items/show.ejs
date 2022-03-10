@@ -18,11 +18,30 @@
           <p class="subtitle is-6"><%= item.shareStatus %> </p>
         </div>
       </div>
+      <a href="/items/<%= item._id %>/edit ">Edit Item</a>
       <div class="content">
         <br>
         <% item.notes.forEach(function(note) { %> 
-          <p><%= note.createdAt.toLocaleDateString() %> </p>
-          <p><%= note.content %> </p>
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">
+                Note created on <%= note.createdAt.toLocaleDateString() %> 
+              </p>
+              <button class="card-header-icon" aria-label="more options">
+                <span class="icon">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <%= note.content %> 
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item">Delete</a>
+            </footer>
+          </div>
         <% }) %> 
       </div>
     </div>
@@ -37,32 +56,6 @@
       <button class="btn" type="submit">Create Note</button>
     </div>
   </form>
-  <!-- <h1><%= title %></h1> 
-  <div id="item-view-container">
-    <div id="info-container">
-      <h1><%= item.title %> </h1>
-      <p>Date Acquired:<%= item.date %> </p>
-      <p>Hours:<%= item.hours %> </p>
-      <p>Willing to Share?:<%= item.shareStatus %> </p>
-      <p>Condition:<%= item.condition %> </p>
-      <h1>Notes:</h1>
-      <% item.notes.forEach(function(note) { %>
-        <tr>
-          <td><%= note.createdAt.toLocaleDateString() %></td>
-          <td><%= note.content %></td>
-        </tr>
-      <% }) %> 
-    </div>
-    <form action="/items/<%= item._id %>/notes " method="POST">
-      <input name="content" type="text">
-      <button class="btn" type="submit">Add a Note</button>
-    </form>
-    <form action="/items/<%= item._id %>/edit " method="GET">
-      <button class="btn" type="submit">Update this Item</button>
-    </form>
-    <form action="/items/<%= item._id %>?_method=DELETE " method="POST">
-      <button class="btn" type="submit">Delete this Item</button>
-    </form> -->
   <% } %> 
 
 
