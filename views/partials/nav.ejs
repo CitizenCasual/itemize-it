@@ -1,25 +1,54 @@
   <% if (!user) { %>
-    <link rel="stylesheet" href="/stylesheets/siwg.css">
+    <!-- <link rel="stylesheet" href="/stylesheets/siwg.css"> -->
   <% } %>
 </head>
 <body>
   <nav id="nav-container">
       <% if (user) { %>
-        <div class="columns">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item">
+              <h1>Itemize It!</h1>
+            </a>
+        
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+        
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+              <a href="/items" class="navbar-item">
+                Browse Items
+              </a>
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <div class="buttons">
+                  <a class="button is-light">
+                    My Account
+                  </a>
+                  <a href="/auth/google" class="button is-light">
+                    Log Out
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!-- <div class="columns">
           <div class="column">
             Itemize It!
           </div>
           <div class="column">
             <a href="/items">Browse Items</a>
           </div>
-          <div class="column">
-            <a href="/auth/logout">Log Out</a>
-          </div>
+
+          </div> -->
     <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
+      <a href="/auth/google" class="button is-light">
+        <button type="submit" class="siwg">Sign In with Google</button>
       </a>
     <% } %>
   </nav>
