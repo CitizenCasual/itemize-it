@@ -12,7 +12,6 @@ router.put('/:id', isLoggedIn, itemsCtrl.update)
 router.delete('/:id', isLoggedIn, itemsCtrl.delete)
 router.post('/:id/notes', itemsCtrl.createNote)
 
-
 export {
   router,
 }

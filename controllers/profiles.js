@@ -2,15 +2,15 @@ import { Profile } from "../models/profiles.js"
 
 function index(req, res) {
   Profile.find({})
-  .then(profile => {
+  .then(profiles => {
     res.render('profiles/index', {
-      profile,
+      profiles,
       title: 'Active Users'
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/items')
+    res.redirect(`/profiles/${req.user.profile._id}`)
   })
 }
 

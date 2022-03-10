@@ -105,8 +105,6 @@ function createNote(req, res) {
   })
 }
 
-
-
 export {
   newItem as new,
   index,
