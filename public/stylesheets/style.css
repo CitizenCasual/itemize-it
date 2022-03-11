@@ -91,6 +91,8 @@ h1 {
 
 #new-form {
   margin-left: 650px;
+  width: 70%;
+  height: 70%;
 }
 
 #modal-trigger {
