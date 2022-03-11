@@ -16,11 +16,13 @@ Itemize It! is a full CRUD application that helps users maintain their items. It
 <br></br>
 ## Screenshots
 --------
-![Landing Page](https://i.imgur.com/3qvdw9N.png)
+![Landing Page](https://i.imgur.com/drPNIme.png)
 <br></br>
-![Browsing Items](https://i.imgur.com/eZYYmAH.png)
+![Browsing Items](https://i.imgur.com/vSyb2Mc.png)
 <br></br>
-![Specific Item](https://i.imgur.com/gZqhukQ.png)
+![Specific Item](https://i.imgur.com/JHEjdcy.png)
+<br></br>
+![items page](https://i.imgur.com/fnYnugx.png)
 
 
 <br></br>
@@ -36,6 +38,7 @@ Itemize It! is a full CRUD application that helps users maintain their items. It
 - Google OAuth
 - Passport
 - Heroku
+- Bulma
 
 
 <br></br>
