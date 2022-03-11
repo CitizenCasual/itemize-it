@@ -82,7 +82,14 @@ h1 {
 .field {
   width: 40%;
   display: flex;
-  justify-content: flex-end;
+
+}
+
+#edit-form {
+
+
+
+ 
 }
 
 
