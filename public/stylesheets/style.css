@@ -89,4 +89,14 @@ h1 {
   margin-left: 650px;
 }
 
+#new-form {
+  margin-left: 650px;
+}
+
+#modal-trigger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
