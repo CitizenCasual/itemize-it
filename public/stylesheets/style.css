@@ -79,6 +79,10 @@ h1 {
   margin-left: 670px;
 }
 
-
+.field {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
 
 

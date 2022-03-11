@@ -16,12 +16,13 @@
           <p class="subtitle is-6">Item Condition:<%= item.condition %> </p>
           <p class="subtitle is-6">Date Aqcuired:<%= item.date %> </p>
           <p class="subtitle is-6">Willing to Share?<%= item.shareStatus %> </p>
+          <p><a class="button is-light" href="/items/<%= item._id %>/edit ">Edit Item</a></p>
+          <form action="/items/<%= item._id %>?_method=DELETE " method="POST">
+            <button class="button is-light" type="submit">Delete this Item</button>
+          </form>
         </div>
       </div>
-      <a class="button is-light" href="/items/<%= item._id %>/edit ">Edit Item</a>
-      <form action="/items/<%= item._id %>?_method=DELETE " method="POST">
-        <button class="button is-light" type="submit">Delete this Item</button>
-      </form>
+
       <div class="content">
         <br>
         <% item.notes.forEach(function(note) { %> 
@@ -48,7 +49,7 @@
       </div>
     </div>
   </div>
-  <form action="/items/<%= item._id %>/notes " method="POST" >
+  <form id='note-pad' action="/items/<%= item._id %>/notes " method="POST" >
     <div class="field">
       <label class="label">Add Note</label>
       <div class="control">
