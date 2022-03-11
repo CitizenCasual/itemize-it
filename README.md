@@ -44,6 +44,7 @@ Itemize It! is a full CRUD application that helps users maintain their items. It
 <br></br>
 ## Next Steps
 ------------
+- Being able to leave recommendations on other users items, like notes
 - Being able to toggle whether you are actively using an item so it keeps track and automatically updates the hours used.
 - Enabling a form of direct messaging between users.
 - Being able to sort items based on age, hours used, willing to share, etc.
