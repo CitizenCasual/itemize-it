@@ -54,6 +54,8 @@ html, body {
 
 h1 {
   font-size: 6rem;
+  display: flex;
+  justify-content: center;
 }
 
 .card-content {
@@ -65,7 +67,18 @@ h1 {
 }
 
 #info-btn {
-  padding-left: 300px;
+  font-size: 3rem;
+  padding-left: 500px;
 }
+
+.columns {
+  justify-content: center;
+}
+
+#new-item-button {
+  margin-left: 670px;
+}
+
+
 
 

@@ -3,7 +3,7 @@
 <%- include ('../partials/nav') %>
 
 <section id="items-section">
-  <h1>All Items</h1>
+  <h1><%= title %> </h1>
   <% items.forEach(item => { %> 
     <div class="columns">
       <div class="column is-three-quarters">
@@ -28,7 +28,7 @@
       </div>
     </div>
   <% }) %> 
-  <a class="button is-light" href="items/new">Create New Item</a>
+  <a id='new-item-button' class="button is-light" href="items/new">Create New Item</a>
 
 </section>
 
