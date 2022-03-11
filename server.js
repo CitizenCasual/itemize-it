@@ -11,7 +11,7 @@ import { passUserToView } from './middleware/middleware.js'
 
 // connect to MongoDB with mongoose
 import('./config/database.js')
-
+//
 // load passport
 import('./config/passport.js')
 
